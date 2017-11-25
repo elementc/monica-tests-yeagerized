@@ -2,7 +2,7 @@ import unittest
 from selenium import webdriver
 from pages.login import LoginPage
 class TestContacts(unittest.TestCase):
-    def test_login(self):
+    def test_all_contacts_features(self):
         d = webdriver.Chrome()
         d.get("https://app.monicahq.com/")
         login = LoginPage(d)
@@ -17,6 +17,33 @@ class TestContacts(unittest.TestCase):
         add_person.set_gender_none()
         add_person.set_gender_female()
         amanda = add_person.click_add_button()
+        amanda = amanda.click_edit_contact()
+        amanda = amanda.click_cancel_button()
+        amanda = amanda.click_edit_contact()
+        amanda.set_first_name("Mandy")
+        amanda.set_last_name("FakeName")
+        amanda.set_gender_male()
+        amanda.set_gender_none()
+        amanda.set_gender_female()
+        amanda.set_street("150 W. University Blvd.")
+        amanda.set_city("Melbourne")
+        input("BREAK")
+        amanda.set_province("Florida")
+        amanda.set_postcode("32901")
+        amanda.set_country("United States")
+        amanda.set_email_address("cdoran2011@my.fit.edu")
+        amanda.set_phone("+13216748000")
+        amanda.set_facebook("https://www.facebook.com/FloridaInstituteofTechnology/")
+        amanda.set_twitter("https://twitter.com/floridatech")
+        amanda.set_probable_age("20")
+        amanda.set_birthdate("02021997")
+        amanda.set_is_deceased()
+        amanda.set_know_deceased_date()
+        amanda.set_deceased_date("October", "30", "2017")
+        amanda.set_add_deceased_reminder()
+        amanda = amanda.click_save_button()
+        assert "Mandy FakeName" in d.page_source
+        # more assertions that things match what was input on the previous page...
         amanda = amanda.click_edit_contact()
         amanda.delete_this_contact()
 
