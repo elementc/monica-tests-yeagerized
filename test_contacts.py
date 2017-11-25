@@ -27,7 +27,6 @@ class TestContacts(unittest.TestCase):
         amanda.set_gender_female()
         amanda.set_street("150 W. University Blvd.")
         amanda.set_city("Melbourne")
-        input("BREAK")
         amanda.set_province("Florida")
         amanda.set_postcode("32901")
         amanda.set_country("United States")
