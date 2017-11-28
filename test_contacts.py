@@ -4,7 +4,7 @@ from pages.login import LoginPage
 class TestContacts(unittest.TestCase):
     def test_all_contacts_features(self):
         d = webdriver.Chrome()
-        d.get("https://app.monicahq.com/")
+        d.get("https://monica-doran.herokuapp.com/")
         login = LoginPage(d)
         dash = login.log_in_correctly()
         contacts = dash.go_contacts()

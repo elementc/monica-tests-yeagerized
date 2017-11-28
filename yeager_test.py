@@ -8,7 +8,7 @@ driver = None
 
 @state_transition(None, "login-page")
 def open(driver):
-    driver.get("https://app.monicahq.com/")
+    driver.get("https://monica-doran.herokuapp.com/")
 
 @state_transition("login-page", "dashboard-page")
 def log_in(driver):
