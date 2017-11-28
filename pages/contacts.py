@@ -9,3 +9,7 @@ class ContactsPage(HeaderPage):
         add_person.click()
         from .add_a_contact import AddPersonPage
         return AddPersonPage(self.driver)
+
+    def open_existing_person(self)-> 'ContactPage':
+        pass
+        #TODO: pick a random person that's here
