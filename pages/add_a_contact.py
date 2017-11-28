@@ -12,10 +12,12 @@ class AddPersonPage(HeaderPage):
 
     def set_first_name(self, first_name):
         field = self.driver.find_element(*self.first_name_field_sel)
+        field.clear()
         field.send_keys(first_name)
 
     def set_last_name(self, last_name):
         field = self.driver.find_element(*self.last_name_field_sel)
+        field.clear()
         field.send_keys(last_name)
 
     def set_gender_none(self):
