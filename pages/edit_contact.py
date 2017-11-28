@@ -2,9 +2,6 @@ from .header_page import HeaderPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.alert import Alert
 
-class OptionNotFoundException(Exception):
-    pass
-
 class EditContactPage(HeaderPage):
     delete_btn_sel = (By.LINK_TEXT, "click here")
     first_name_field_sel = (By.NAME, "firstname")
@@ -83,14 +80,6 @@ class EditContactPage(HeaderPage):
         postcode = self.driver.find_element(*self.postcode_field_sel)
         postcode.clear()
         postcode.send_keys(pcode)
-
-    def choose_from_multiselect(self, select_tag, choice):
-        opts = select_tag.find_elements_by_tag_name("option")
-        for opt in opts:
-            if opt.text.strip() == choice:
-                opt.click()
-                return
-        raise OptionNotFoundException("No such option %s" % choice)
 
     def set_country(self, cname):
         country = self.driver.find_element(*self.country_selector_sel)
