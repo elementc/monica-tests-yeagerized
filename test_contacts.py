@@ -63,7 +63,7 @@ class TestContacts(unittest.TestCase):
         activity = amanda.click_add_activity()
         activity.set_description("went to a spacex landing and picnic")
         activity.set_date("12212015")
-        activity.set_category("picknicked")
+        activity.set_category("just hung out")
         activity.set_comment("I believe this will be, in retrospect, a major scientific acheivement.")
         amanda = activity.click_record_activity()
         assert "spacex" in d.page_source
