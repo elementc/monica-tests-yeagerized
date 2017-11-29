@@ -1,9 +1,9 @@
-from selenium import webdriver
-from yeager import walk
+from yeager import enumerate_transitions
 
 # parse the transtitions...
 import state_transitions.headerpage
 import state_transitions.contacts
 import state_transitions.login
 
-walk(driver=webdriver.Chrome())
+if __name__ == "__main__":
+    enumerate_transitions()

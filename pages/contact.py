@@ -8,6 +8,10 @@ class ContactPage(HeaderPage):
     add_debt_sel = (By.LINK_TEXT, "Add debt")
     add_task_sel = (By.LINK_TEXT, "Add a task")
 
+    def initial_status(self):
+        HeaderPage.initial_status(self)
+        assert "Personal information" in self.driver.page_source, "missing string from page template"
+
     def click_edit_contact(self) -> 'EditContactPage':
         btn = self.driver.find_element(*self.edit_contact_info_sel)
         btn.click()
