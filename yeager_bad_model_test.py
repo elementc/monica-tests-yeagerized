@@ -10,6 +10,7 @@ import state_transitions.login
 
 from pages.add_a_contact import AddPersonPage
 from pages.contact import ContactPage
+from pages.contacts import ContactsPage
 from yeager import state_transition
 
 @state_transition("contacts-page", "add-contact-page", weight=5)
